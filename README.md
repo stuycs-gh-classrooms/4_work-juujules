@@ -1,4 +1,4 @@
 # Work For NeXT CS
-### Name: YOUR NAME HERE
-### Class Period:
+### Name: Julian Hong
+### Class Period: 4
 ---
