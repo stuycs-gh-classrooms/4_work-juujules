@@ -25,17 +25,22 @@ void draw() {
   drawCircle(angle, circRadius, width/2, sinAmplitude*2 + circRadius);
   //concentric circles
   drawCircle(angle, spiralRadius, width/2, sinAmplitude*2 + circRadius*3);
-
+  if (angle%360==0 && angle!=0){
+    spiralRadius-=10;
+  }
+  if (spiralRadius==0){
+    spiralRadius=100;
+  }
   angle++;
+  println(angle);
 }//draw
 
 void drawSinCurve(int degrees, int amplitude, int yOffset) {
    yOffset=int(amplitude*sin(radians(degrees)))+sinAmplitude;
-   circle(angle,yOffset,dotDiameter);
-   if (angle>width){
-     angle=0;
-   }
+   circle(angle%width,yOffset,dotDiameter);
 }
 void drawCircle(int degrees, int radius, int xOffset, int yOffset) {
-
+   int xCirc=int(cos(radians(degrees))*radius+xOffset);
+   int yCirc=int(sin(radians(degrees))*radius+yOffset);
+   circle(xCirc,yCirc,dotDiameter);
 }
