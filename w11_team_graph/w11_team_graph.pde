@@ -23,6 +23,8 @@ void draw(){
 }
 
 void spiral(int xOffset,int yOffset,int radius){
-  int xSpiral=xOffset+;
-  int ySpiral=yOffset+;
+  int xSpiral=xOffset+radius*int(cos(radians(angle)));
+  int ySpiral=yOffset+radius*int(sin(radians(angle)));
+  circle(xSpiral,ySpiral,dotDiameter);
+  radius++;
 }
