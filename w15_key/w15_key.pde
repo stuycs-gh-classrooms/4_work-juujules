@@ -2,7 +2,6 @@ int[] xvals, yvals;
 int numPoints;
 int xMod, yMod;
 int clear;
-char k;
 
 void setup() {
   size(600, 400);
@@ -42,7 +41,10 @@ void drawLines(int[] xs, int[] ys) {
 }
 
 void moveLines(int[] xs, int[] ys, int xMod, int yMod){
-  
+  for (int i=0;i<numPoints;i++){
+     xs[i]+=xMod;
+     ys[i]+=yMod;
+  }
 }
 
 void mousePressed() {
@@ -55,5 +57,19 @@ void keyPressed() {
   if (key=='c'){
    background(0); 
    clear=numPoints+1;
+  }
+  if (key==CODED){
+    if(keyCode==UP){
+      moveLines(xvals,yvals,0,-1);
+    }
+    if(keyCode==DOWN){
+      moveLines(xvals,yvals,0,1);
+    }
+    if(keyCode==RIGHT){
+      moveLines(xvals,yvals,1,0);
+    }
+    if(keyCode==LEFT){
+      moveLines(xvals,yvals,-1,0);
+    }
   }
 }
